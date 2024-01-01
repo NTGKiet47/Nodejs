@@ -1,0 +1,4 @@
+insert into Roles (code, value)
+values ('r1', 'Admin'),
+('r2', 'Mcderator'),
+('r3', 'User');

@@ -1,0 +1,6 @@
+// config babel to use imprt and require at the same time
+{
+    "presets": [
+        "@babel/preset-env"
+    ]
+}
