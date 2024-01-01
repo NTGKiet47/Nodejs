@@ -3,6 +3,9 @@ const cors = require("cors");
 // read environment variables
 require('dotenv').config();
 const initRoutes = require('./src/routes');
+const connection = require('./connection_db');
+
+connection();
 
 const app = express();
 app.use(cors({
