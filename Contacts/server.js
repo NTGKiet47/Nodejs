@@ -1,6 +1,5 @@
 const express = require("express");
 const dotenv = require("dotenv").config();
-const router = require("./routes/contactRoutes");
 const errorHandler = require("./middleware/errorHandler");
 const connect_db = require("./config/dbConnection");
 
@@ -16,9 +15,10 @@ app.use(
 
 const port = process.env.PORT || 5000;
 
+app.use("/", require("./routes/contactRoutes"));
+app.use("/user", require("./routes/userRoutes"));
+app.use(errorHandler);
+
 app.listen(port, () => {
   console.log(`Running on http://localhost:${port}`);
 });
-
-app.use("/", router);
-app.use(errorHandler);
